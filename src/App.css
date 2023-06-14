@@ -378,7 +378,6 @@
     color: #000;
     letter-spacing: 0.4px;
     font-size: 3.4rem;
-    padding-left: 190px;
   }
 
   .header {
@@ -389,7 +388,7 @@
   }
 
   .logo-container {
-    margin-left: 0;
+    margin-left: 260px;
     margin-right: 0;
   }
 
