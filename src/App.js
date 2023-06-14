@@ -243,7 +243,7 @@ function App() {
             <div className="hero-text">
               <p>LE SAC BAGUETTE</p>
 
-              <h1 className="text-center text-5xl leading-tight">
+              <h1 className="hero-heading-text text-center text-6xl leading-tight">
                 INSPIRED BY THE 90S
               </h1>
 
