@@ -54,12 +54,14 @@ const Header = function (props) {
           </ul>
         </nav>
 
-        <div
-          className={`logo-container cursor-pointer ${
-            !props.goToCheckout ? "ml-9" : ""
-          }`}
-        >
-          <h1 className="logo " onClick={() => props.goToHome()}>
+        <div className={"logo-container cursor-pointer"}>
+          <h1
+            className="logo "
+            onClick={() => {
+              props.goToHome();
+              window.scrollTo(0, 0);
+            }}
+          >
             Dior
           </h1>
         </div>
@@ -70,7 +72,11 @@ const Header = function (props) {
               src={searchIcon}
               className="header-icon"
               alt="Search Icon"
-              onClick={() => setIsSearchActive((prevState) => !prevState)}
+              onClick={() => {
+                setIsSearchActive((prevState) => !prevState);
+                props.setSearchProducts([]);
+                props.setSearchQuery("");
+              }}
             />
           )}
           {!props.goToCheckout && (
@@ -129,7 +135,7 @@ const Header = function (props) {
                   const productImage = require(`../img/product_img/${p.image}`);
                   return (
                     <div
-                      className="mb-6 flex items-center gap-10"
+                      className="mb-6 flex cursor-pointer items-center gap-10 lg:px-12"
                       key={p.id}
                       onClick={() => {
                         props.goToProductPage();
@@ -138,12 +144,12 @@ const Header = function (props) {
                       }}
                     >
                       <img
-                        className="w-28"
+                        className="w-28 lg:w-36"
                         src={productImage}
                         alt="product image at checkout page"
                       />
                       <div className="mr-auto">
-                        <h3 className="flex-wrap text-xl uppercase tracking-widest text-neutral-800">
+                        <h3 className="flex-wrap text-xl uppercase tracking-widest text-neutral-800 lg:text-2xl">
                           {p.name}
                         </h3>
                       </div>
