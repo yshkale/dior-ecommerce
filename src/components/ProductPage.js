@@ -45,7 +45,7 @@ const ProductPage = function (props) {
           </p>
 
           <a
-            className="w-full cursor-pointer border border-neutral-300 bg-neutral-800 py-6 text-center text-xl uppercase tracking-[0.4em] text-neutral-50 duration-300 ease-in-out hover:bg-[#EFEFEF] hover:text-neutral-900"
+            className="w-full cursor-pointer border border-neutral-300 bg-[#000] py-6 text-center text-xl uppercase tracking-[0.4em] text-neutral-50 duration-300 ease-in-out hover:bg-[#EFEFEF] hover:text-[#000]"
             onClick={() => props.addToCart(props.currentPageData.id)}
           >
             Add to Bag
