@@ -21,7 +21,6 @@ const SlidingMenu = function (props) {
           <a
             onClick={() => {
               props.handleMenuToggle();
-              props.goToHome();
               props.renderWomenCategory();
             }}
             href="#product-section"
@@ -32,7 +31,6 @@ const SlidingMenu = function (props) {
           <a
             onClick={() => {
               props.handleMenuToggle();
-              props.goToHome();
               props.renderMenCategory();
             }}
             href="#product-section"
@@ -46,7 +44,6 @@ const SlidingMenu = function (props) {
           <a
             onClick={() => {
               props.handleMenuToggle();
-              props.goToHome();
             }}
             href="#info"
             className=" cursor-pointer text-2xl font-thin tracking-wide text-neutral-500 hover:text-[#000]"

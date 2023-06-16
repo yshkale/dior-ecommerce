@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CloseIcon from "../icons/menu-close.svg";
 import MinusIcon from "../icons/minus.svg";
 import PlusIcon from "../icons/plus.svg";
@@ -76,17 +77,17 @@ const Cart = function (props) {
             <p className="text-[1.4rem] leading-normal tracking-wide text-neutral-600">
               Taxes and shipping calculated at checkout
             </p>
-            <a
-              className="cursor-pointer border-neutral-900 bg-black px-10 py-4 text-center text-[1.3rem] uppercase tracking-widest text-white duration-300 ease-in-out  hover:border hover:bg-neutral-100 hover:text-black"
-              onClick={() => {
-                props.handleCartToggle();
-                props.initiateCheckout();
-                props.setProductPageActive(false);
-                window.scrollTo(0, 0);
-              }}
-            >
-              Checkout
-            </a>
+            <Link to="/checkout">
+              <p
+                className="w-full cursor-pointer border-neutral-900 bg-black px-10 py-4 text-center text-[1.3rem] uppercase tracking-widest text-white duration-300 ease-in-out  hover:border hover:bg-neutral-100 hover:text-black"
+                onClick={() => {
+                  props.handleCartToggle();
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Checkout
+              </p>
+            </Link>
           </div>
         )}
 

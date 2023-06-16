@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import circleCheck from "../icons/circle-check.svg";
 import creditCard from "../icons/credit-card.svg";
 
-const ThankyouPage = function ({ userInfo, goToHome, setProductsInCart }) {
+const ThankyouPage = function ({ formData, setProductsInCart }) {
   return (
     <div className="border-y border-neutral-300">
       <main className="lg:px-[40rem]">
@@ -12,7 +13,7 @@ const ThankyouPage = function ({ userInfo, goToHome, setProductsInCart }) {
               Order #1573
             </p>
             <h2 className="text-[2rem] tracking-wide">
-              Thank you {userInfo.firstName} {userInfo.lastName}!
+              Thank you {formData.firstName} {formData.lastName}!
             </h2>
           </div>
         </div>
@@ -39,7 +40,7 @@ const ThankyouPage = function ({ userInfo, goToHome, setProductsInCart }) {
                 Contact information
               </h3>
               <p className="text-xl tracking-wide text-neutral-600">
-                {userInfo.email}
+                {formData.email}
               </p>
             </div>
 
@@ -48,13 +49,13 @@ const ThankyouPage = function ({ userInfo, goToHome, setProductsInCart }) {
                 Shipping address
               </h3>
               <p className="text-xl leading-relaxed tracking-wide text-neutral-600">
-                <p>{userInfo.firstName + userInfo.lastName}</p>
-                <p>{userInfo.address}</p>
+                <p>{formData.firstName + formData.lastName}</p>
+                <p>{formData.address}</p>
                 <p>
-                  {userInfo.pinCode + " " + userInfo.city}, {userInfo.state}
+                  {formData.pinCode + " " + formData.city}, {formData.state}
                 </p>
-                <p>{userInfo.country}</p>
-                <p>{userInfo.phone}</p>
+                <p>{formData.country}</p>
+                <p>{formData.phone}</p>
               </p>
             </div>
 
@@ -65,7 +66,7 @@ const ThankyouPage = function ({ userInfo, goToHome, setProductsInCart }) {
               <div className="flex items-center gap-4">
                 <img className="w-8" src={creditCard} alt="credit card icon" />
                 <p className="text-xl tracking-wide text-neutral-600">
-                  - {userInfo.orderValue}
+                  - {formData.orderValue}
                 </p>
               </div>
             </div>
@@ -82,16 +83,17 @@ const ThankyouPage = function ({ userInfo, goToHome, setProductsInCart }) {
         </div>
 
         <div className="my-12 flex flex-col items-center ">
-          <button
-            onClick={() => {
-              window.scrollTo(0, 0);
-              setProductsInCart([]);
-              goToHome();
-            }}
-            className=" w-[90%] rounded-lg bg-black py-8 text-[1.3rem] tracking-wide text-white"
-          >
-            Continue shopping
-          </button>
+          <Link to="/" className="w-full pl-14 lg:pl-28">
+            <button
+              onClick={() => {
+                setProductsInCart([]);
+                window.scrollTo(0, 0);
+              }}
+              className=" w-[90%] rounded-lg bg-black py-8 text-[1.3rem] tracking-wide text-white"
+            >
+              Continue shopping
+            </button>
+          </Link>
 
           <p className=" my-6 mb-10 text-center text-[1.3rem] tracking-wide text-neutral-700">
             Need help? Contact us
