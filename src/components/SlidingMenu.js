@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CloseIcon from "../icons/menu-close.svg";
 import User from "../icons/user.svg";
 
@@ -18,26 +19,32 @@ const SlidingMenu = function (props) {
           <a className="text-xl font-semibold uppercase tracking-widest">
             Shop
           </a>
-          <a
-            onClick={() => {
-              props.handleMenuToggle();
-              props.renderWomenCategory();
-            }}
-            href="#product-section"
-            className="cursor-pointer text-2xl font-thin tracking-wide text-neutral-500 hover:text-[#000]"
-          >
-            Women
-          </a>
-          <a
-            onClick={() => {
-              props.handleMenuToggle();
-              props.renderMenCategory();
-            }}
-            href="#product-section"
-            className="cursor-pointer text-2xl font-thin tracking-wide text-neutral-500 hover:text-[#000]"
-          >
-            Men
-          </a>
+          <NavLink to="/">
+            <a
+              onClick={() => {
+                props.handleMenuToggle();
+                props.renderWomenCategory();
+                window.scrollTo(0, 700);
+              }}
+              href="#product-section"
+              className="cursor-pointer text-2xl font-thin tracking-wide text-neutral-500 hover:text-[#000]"
+            >
+              Women
+            </a>
+          </NavLink>
+          <NavLink to="/">
+            <a
+              onClick={() => {
+                props.handleMenuToggle();
+                props.renderMenCategory();
+                window.scrollTo(0, 700);
+              }}
+              href="#product-section"
+              className="cursor-pointer text-2xl font-thin tracking-wide text-neutral-500 hover:text-[#000]"
+            >
+              Men
+            </a>
+          </NavLink>
           <a className="cursor-pointer text-2xl font-thin tracking-wide text-neutral-500 hover:text-[#000]">
             Small Leather Goods
           </a>
